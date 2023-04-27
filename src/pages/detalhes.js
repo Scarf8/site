@@ -1,7 +1,12 @@
+import React from 'react';
+import Title from './../components/Title/index';
+
 function Detalhes() {
     return (
       <div>
-        <h1>Detalhes</h1>
+        <Title
+                title={"Detalhes"}
+                 />
       </div>
     );
   }

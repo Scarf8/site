@@ -1,7 +1,12 @@
+import React from 'react';
+import Title from './../components/Title/index';
+
 function Cadastro() {
     return (
       <div>
-        <h1>Cadastro</h1>
+       <Title
+                title={"Cadastro"}
+                 />
       </div>
     );
   }
