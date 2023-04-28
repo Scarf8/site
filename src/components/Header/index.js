@@ -11,12 +11,12 @@ export default function Header() {
 
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li> <Link className="nav-link" to='/'>Home</Link> </li>
-                    <li> <Link className="nav-link" to='/cadastro'>Cadastro</Link> </li>
                     <li> <Link className="nav-link" to='/detalhes'>Detalhes</Link> </li>
+            
                 </ul>
 
                 <div className="col-md-3 text-end">
-                    <button type="button" className="btn btn-primary">Cadastrar</button>
+                <Link className="nav-link" to='/cadastro'><button type="button" class="btn btn-dark">Cadastrar</button></Link>
                 </div>
             </header>
         </div>

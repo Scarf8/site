@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Title from './../components/Title/index';
 
-function Cadastro() {
+export default function Cadastro() {
+
+    const [nome, setNome] = useState('');
+    const [telefone, setTelefone] = useState('');
+
+    function handleNomeChange(event) {
+        setNome(event.target.value);
+    }  
+    
+    function handleTelefoneChange(event) {
+        setTelefone(event.target.value);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        // enviar dados de cadastro para o servidor aqui
+        console.log(`Nome: ${nome}, Telefone: ${telefone}`);
+    }
+
     return (
-      <div>
-       <Title
-                title={"Cadastro"}
-                 />
-      </div>
+ 
+        <div className="form-custom">
+           <Title title={"Cadastro de Assinante"} />
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Nome:
+                    <input type="text" value={nome} onChange={handleNomeChange} />
+                </label>
+                <br />
+                <label>
+                    Telefone:
+                    <input type="text" value={telefone} onChange={handleTelefoneChange} />
+                </label>
+                <br />
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     );
-  }
-  
-  export default Cadastro;
+}
