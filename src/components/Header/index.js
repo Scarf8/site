@@ -15,7 +15,7 @@ export default function Header() {
             
                 </ul>
 
-                <div className="col-md-3 text-end">
+                <div>
                 <Link className="nav-link" to='/cadastro'><button type="button" class="btn btn-dark">Cadastrar</button></Link>
                 </div>
             </header>

@@ -1,5 +1,5 @@
 import "./card.css";
-import Assistido from "../Button";
+import Assistido from "../Buttonsign/assistido";
 
 export default function Card(props) {
   return (
@@ -16,7 +16,7 @@ export default function Card(props) {
                 <a
                   href={`/detalhes/${filme.titulo}`}
                 >
-                  <div className="btn btn-primary">
+                  <div>
                     <Assistido assistido={filme.assistido} />
                   </div>
                 </a>

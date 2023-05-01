@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Title from './../components/Title/index';
+import Buttonsign from '../components/Buttonsign/buttonsign';
+
+
 
 export default function Cadastro() {
 
@@ -34,71 +37,67 @@ export default function Cadastro() {
         setCvc(event.target.value);
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        // enviar dados de cadastro para o servidor aqui
-        console.log(`Nome: ${nome}, Telefone: ${telefone}, Endereço: ${endereco}, Nome do Cartão: ${nomecartao}, Número do Cartão: ${numcartao}, CVC: ${cvc}`);
-    }
-
     return (
- 
-        <><div className="form-custom">
-            <Title title={"Cadastro de Assinante"} />
-            <form onSubmit={handleSubmit}>
-                <h4>Dados pessoais</h4>
-                <label>
-                    Nome:
-                    <input type="text" value={nome} onChange={handleNomeChange} />
-                </label>
-                <br />
-                <label>
-                    Telefone:
-                    <input type="text" value={telefone} onChange={handleTelefoneChange} />
-                </label>
-                <br />
-                <label>
-                    Endereço:
-                    <input type="text" value={endereco} onChange={handleEnderecoChange} />
-                </label>
-                <br />
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-        
-        <div>
-        <form onSubmit={handleSubmit}>
-                <h4>Dados do Cartão</h4>
-                <label>
-                    Nome no Cartão:
-                    <input type="text" value={nomecartao} onChange={handleNomeCartaoChange} />
-                </label>
-                <br />
-                <label>
-                    Número do Cartão:
-                    <input type="text" value={numcartao} onChange={handleNumCartaoChange} />
-                </label>
-                <br />
-                <label>
-                    CVC do Cartão:
-                    <input type="text" value={cvc} onChange={handleCvcChange} />
-                </label>
-                <br />
 
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked/>
-                <label class="btn btn-outline-primary" for="btnradio1">Free</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"/>
-                <label class="btn btn-outline-primary" for="btnradio2">Plus</label>
-                <br />
-
-                <button type="submit">Assinar</button>        
+        <div className="container">
+          <div className="mt-5 text-center">
+          <Title
+                        title={"Cadastro de conta"}
+                        />
+          </div>
+          <div className="row mt-5">
+            <div className="col">
+              <div>
+                <div className="mt-3">
+                  <label> Dados do Assinante </label>
                 </div>
-            </form>
-
-
-            </div></>
-
-        
-    );
-}
+              </div>
+              <div className="mt-3">
+                <label htmlFor="nameInput">Name:</label><br />
+                <input class="form-control" placeholder="Nome Completo" id="nameInput" type="text" value={nome} onChange={handleNomeChange} /> <br />
+              </div>
+              <div className="mt-3">
+                <label htmlFor="nameInput">Telefone:</label><br />
+                <input class="form-control" placeholder="Telefone" id="TelefoneInput" type="number" value={telefone} onChange={handleTelefoneChange} /> <br />
+              </div>
+              <div className="mt-3">
+                <label htmlFor="nameInput">Endereço:</label><br />
+                <input class="form-control" placeholder="Endereço" id="EnderecoInput" type="text" value={endereco} onChange={handleEnderecoChange} /> <br />
+              </div>
+            </div>
+    
+            
+            <div className="col">
+              <div className="mt-3">
+                <label> Dados do Cartão </label>
+              </div>
+              <div className="mt-3">
+                <label htmlFor="nameInput">Nome do Cartão:</label><br />
+                <input class="form-control" placeholder="Nome do cartão" type="text" value={nomecartao} onChange={handleNomeCartaoChange} /> <br />
+              </div>
+              <div className="mt-3">
+                <label htmlFor="nameInput">Número do Cartão:</label><br />
+                <input className="form-control" placeholder="Número do cartão"  type="text" maxLength={19} value={numcartao} onChange={handleNumCartaoChange} /> <br />
+              </div>
+              <div className="mt-3">
+                <label htmlFor="NumerocvcInput">Número do CVC:</label><br />
+                <input className="form-control" placeholder="Número do CVC" type="password" maxLength={3} value={cvc} onChange={handleCvcChange} /> <br />
+              </div>
+            </div>
+          </div>
+          <div>
+    
+            <div>
+              <Buttonsign />
+            </div>
+            <div className="mt-5 text-center">
+    
+                  <button>Assinar</button>
+                
+            </div>
+    
+          </div>
+        </div>
+    
+      );
+    }

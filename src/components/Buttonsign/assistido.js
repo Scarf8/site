@@ -1,9 +1,9 @@
-import { Button } from "bootstrap";
-
+import React, { useState } from "react";
+import './button2.css';
 
 function Assistido(props) {
     return (
-     <button className="btn btn-primary">
+     <button>
         {
             props.assistido ? "Assistir Novamente": "Assistir"
         }

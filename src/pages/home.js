@@ -9,7 +9,7 @@ import { useState } from 'react';
 function Home() {
 
     const [valor, setValue] = useState("");
-    // const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");
 
     // const searchLowerCase = search.toLowerCase();
 
@@ -19,7 +19,7 @@ function Home() {
         <div>
             <Title
                 title={"Catálogo de Filmes"}/>
-            {/* <input type="search" value={search} onChange={(e) => setSearch(e.target.value)}/> s */}
+            <input type="search" value={search} onChange={(e) => setSearch(e.target.value)}/> 
             <select name="value" value={valor} onChange={texto => setValue(texto.target.value)}>
                 <option value="">Selecione</option>
                 <option value="Titulo">Titulo</option>
